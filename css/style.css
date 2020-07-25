@@ -1,9 +1,55 @@
 body{
     margin:0;
-    height: 95vh;
-    width: 95;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+}
+
+.container{
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(pixil-frame-0.png);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
+
+.start{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    color: #fff0e7;
+    font-size: 250%;
+}
+
+.btn-full:link, .btn-full:visited{
+    background-color: #7d2953;
+    color: #fff0e7;
+    border: 1px solid #fff0e7;
+    padding: 10px 40px;
+    text-decoration: none;
+    border-radius: 15px;    
+    transition: background-color 0.2s, border 0.2s, padding 0.2s;
+
+}
+.btn-full:hover, .btn-full:active{
+    background-color: #b43d79;
+    border: 1px solid #b43d79;
+    padding: 10px 60px;
+}
+
+.btn-restart:link, .btn-restart:visited{
+    display: inline-block;
+    margin-bottom: 20px;
+
+}
+
+canvas {
+    border: 6px dashed #82759a;
+}  

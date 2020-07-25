@@ -1,5 +1,8 @@
 // -------- GLOBAL VARIABLES---------
 
+var startScreen = document.querySelector('.restart');
+var title = document.querySelector('#title');
+
 const canvas = document.getElementById('snake');
 let context = canvas.getContext('2d');
 let box = 32;
@@ -17,20 +20,20 @@ let food = {
 
 // -------- FUNCTIONS ---------
 function createBG(){
-    context.fillStyle = 'lightgreen';
+    context.fillStyle = '#fff0e7';
     context.fillRect(0,0, 16* box, 16* box);
 }
 
 function createSnake(){
     for (let i=0; i <snake.length; i++){
-        context.fillStyle = 'green';
+        context.fillStyle = '#008551';
         context.fillRect(snake[i].x, snake[i].y, box, box)
     }
 
 }
 
 function drawFood(){
-    context.fillStyle = 'red'
+    context.fillStyle = '#7d2953'
     context.fillRect(food.x, food.y, box, box)
 }
 
@@ -43,7 +46,15 @@ function update(event){
     if(event.keyCode == 40 && direction != 'up') direction = 'down';
 }
 
+function gameOver(){
+    var btnElement = document.createElement('a');
+    btnElement.setAttribute('href', 'start-screen.html');
+    btnElement.setAttribute('class', 'btn-full btn-restart')
+    btnElement.innerHTML="Restart";
+    title.innerHTML="Game Over!"
+    startScreen.appendChild(btnElement);
 
+}
 function startGame(){
 
     if(snake[0].x > 15 * box && direction == 'right') snake[0].x = 0;
@@ -56,6 +67,8 @@ function startGame(){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(game);
             alert('Game Over!');
+            gameOver();
+            
         }
     }
 
