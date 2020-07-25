@@ -48,7 +48,7 @@ function update(event){
 
 function gameOver(){
     var btnElement = document.createElement('a');
-    btnElement.setAttribute('href', 'start-screen.html');
+    btnElement.setAttribute('href', 'index.html');
     btnElement.setAttribute('class', 'btn-full btn-restart')
     btnElement.innerHTML="Restart";
     title.innerHTML="Game Over!"
